@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import {
   Box,
   Button,
@@ -12,7 +12,7 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
-import { styled, keyframes } from "@mui/system";
+import { styled } from "@mui/system";
 
 // Categories
 const categories = [
@@ -83,55 +83,18 @@ const GreenButton = styled(Button)({
   },
 });
 
-// Animation for scroll-in
-const fadeInUp = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
-
-// Styled animated card
-const AnimatedCard = styled(Card)(({ visible }) => ({
-  opacity: visible ? 1 : 0,
-  transform: visible ? "translateY(0)" : "translateY(20px)",
-  animation: visible ? `${fadeInUp} 0.6s ease-out` : "none",
-  transition: "opacity 0.6s, transform 0.6s",
+// Simple styled card with transition
+const StyledCard = styled(Card)({
+  transition: "transform 0.3s ease, opacity 0.3s ease",
   borderRadius: 16,
   overflow: "hidden",
-}));
+  "&:hover": {
+    transform: "scale(1.02)",
+  },
+});
 
 export default function CollectionsSection() {
   const [activeCategory, setActiveCategory] = useState("All Collections");
-  const [visibleCards, setVisibleCards] = useState([]);
-
-  const cardRefs = useRef([]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry, idx) => {
-          if (entry.isIntersecting) {
-            setVisibleCards((prev) => {
-              const newVisible = [...prev];
-              newVisible[idx] = true;
-              return newVisible;
-            });
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    cardRefs.current.forEach((ref) => ref && observer.observe(ref));
-    return () => {
-      cardRefs.current.forEach((ref) => ref && observer.unobserve(ref));
-    };
-  }, [activeCategory]);
 
   const filtered =
     activeCategory === "All Collections"
@@ -141,14 +104,12 @@ export default function CollectionsSection() {
   return (
     <Box
       sx={{
-        // pt: { xs: 6, sm: 10 },
-        // pb: { xs: 6, sm: 10 }, // ✅ Fix bottom spacing
-        // px: 0,
-        mt: 6,
+        mt: 8,
         mb: 6,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        scrollMarginTop: "90px",
       }}
       id="collections"
     >
@@ -181,19 +142,14 @@ export default function CollectionsSection() {
           ))}
         </Box>
 
-        {/* Responsive Grid with scroll animation */}
+        {/* Grid */}
         <Grid container spacing={3} justifyContent="center">
           {filtered.map((item, idx) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={idx}>
-              <AnimatedCard
-                elevation={4}
-                ref={(el) => (cardRefs.current[idx] = el)}
-                visible={visibleCards[idx]}
-              >
+              <StyledCard elevation={4}>
                 <CardMedia
                   component="img"
                   height="250"
-                  width={250}
                   image={item.image}
                   alt={item.title}
                 />
@@ -207,7 +163,7 @@ export default function CollectionsSection() {
                     ))}
                   </Box>
                 </CardContent>
-              </AnimatedCard>
+              </StyledCard>
             </Grid>
           ))}
         </Grid>
