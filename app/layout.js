@@ -1,13 +1,13 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
-import { createContext } from "react";
+import { useMemo, useState, createContext } from "react";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import getTheme from "./theme";
 import "./globals.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// Context for theme toggling
+// Create Color Mode Context
 export const ColorModeContext = createContext({ toggleColorMode: () => {} });
 
 export default function RootLayout({ children }) {
@@ -22,24 +22,7 @@ export default function RootLayout({ children }) {
     []
   );
 
-  const theme = useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode,
-          primary: {
-            main: "#2E7D32",
-          },
-          secondary: {
-            main: "#9e9e9e",
-          },
-        },
-        typography: {
-          fontFamily: `"Poppins", "Roboto", "Helvetica", "Arial", sans-serif`,
-        },
-      }),
-    [mode]
-  );
+  const theme = useMemo(() => getTheme(mode), [mode]);
 
   return (
     <html lang="en">

@@ -1,7 +1,13 @@
 "use client";
 
 import Slider from "react-slick";
-import { Box, Container, Typography, Button } from "@mui/material";
+import {
+  Box,
+  Container,
+  Typography,
+  Button,
+  useMediaQuery,
+} from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -21,10 +27,18 @@ const slides = [
     heading: "Elevate Your",
     subtext: "Custom-made elegance",
   },
+  {
+    id: 3,
+    image: "/images/banner-placeholder.png",
+    heading: "Quality and Craft in",
+    headingSub: "Every Stitch",
+    subtext: "Tailored to your unique style",
+  },
 ];
 
 export default function HeroSlider() {
   const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const settings = {
     dots: true,
@@ -75,13 +89,13 @@ export default function HeroSlider() {
   };
 
   return (
-    <Box sx={{ overflow: "hidden", position: "relative" }}>
+    <Box sx={{ overflow: "hidden", position: "relative" }} id="home">
       <Slider {...settings}>
         {slides.map((slide) => (
           <Box
             key={slide.id}
             sx={{
-              height: { xs: "100vh", md: "90vh" },
+              height: { xs: "100vh", md: "100vh" },
               backgroundImage: `url(${slide.image})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
@@ -92,58 +106,98 @@ export default function HeroSlider() {
               px: 2,
             }}
           >
-            <Container maxWidth="md" sx={{ textAlign: "center" }}>
-              <Typography
-                variant="h3"
-                fontWeight="bold"
-                gutterBottom
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: { xs: "100vh", md: "90vh" },
+              }}
+            >
+              <Container
+                maxWidth="md"
                 sx={{
-                  fontSize: {
-                    xs: "2rem",
-                    sm: "2.5rem",
-                    md: "3rem",
-                  },
+                  textAlign: "start",
+                  ...(!isMobile && { mr: 6, pt: 5 }),
                 }}
               >
-                {slide.heading}
-              </Typography>
-              <Typography
-                variant="h6"
-                gutterBottom
-                sx={{ fontSize: { xs: "1rem", md: "1.25rem" } }}
-              >
-                {slide.subtext}
-              </Typography>
+                <Typography
+                  variant="h2"
+                  fontWeight="bold"
+                  gutterBottom
+                  sx={{
+                    fontSize: {
+                      xs: "2rem",
+                      sm: "2.5rem",
+                      md: "3rem",
+                    },
+                  }}
+                >
+                  {slide.heading}
+                </Typography>
+                <Typography
+                  variant="h2"
+                  fontWeight="bold"
+                  gutterBottom
+                  sx={{
+                    fontSize: {
+                      xs: "2rem",
+                      sm: "2.5rem",
+                      md: "3rem",
+                    },
+                  }}
+                >
+                  {slide.headingSub}
+                </Typography>
+                <Typography
+                  variant="h6"
+                  gutterBottom
+                  sx={{ fontSize: { xs: "1rem", md: "1.25rem" } }}
+                >
+                  {slide.subtext}
+                </Typography>
 
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: { xs: "column", sm: "row" },
-                  justifyContent: "center",
-                  gap: 2,
-                  mt: 4,
-                }}
-              >
-                <Button
-                  variant="contained"
-                  color="success"
-                  size="large"
-                  fullWidth
-                  sx={{ maxWidth: { xs: "100%", sm: "auto" } }}
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: { xs: "column", sm: "row" },
+                    justifyContent: "start",
+                    gap: 2,
+                    mt: 4,
+                  }}
                 >
-                  Book Appointment
-                </Button>
-                <Button
-                  variant="contained"
-                  color="inherit"
-                  size="large"
-                  fullWidth
-                  sx={{ maxWidth: { xs: "100%", sm: "auto" } }}
-                >
-                  View Collections
-                </Button>
-              </Box>
-            </Container>
+                  <Button
+                    variant="contained"
+                    sx={{
+                      width: "150px",
+                      backgroundColor: "#2A5A14",
+                      borderRadius: "8px",
+
+                      // maxWidth: {
+                      //   xs: "100%",
+                      //   sm: "auto",
+                      //   backgroundColor: "#2A5A14",
+                      // },
+                    }}
+                  >
+                    Book Appointment
+                  </Button>
+                  <Button
+                    variant="contained"
+                    color="inherit"
+                    size="large"
+                    fullWidth
+                    sx={{
+                      maxWidth: { xs: "100%", sm: "auto" },
+                      width: "170px",
+                      borderRadius: "8px",
+                    }}
+                  >
+                    View Collections
+                  </Button>
+                </Box>
+              </Container>
+            </Box>
           </Box>
         ))}
       </Slider>
