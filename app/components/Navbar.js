@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import {
   AppBar,
   Box,
@@ -29,7 +29,16 @@ export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const navLinks = ["Home", "About", "Collections"];
+  const [scrolled, setScrolled] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10); // change threshold as needed
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   const handleScroll = (sectionId) => {
     const element = document.getElementById(sectionId.toLowerCase());
     if (element) {
@@ -50,7 +59,9 @@ export default function Navbar() {
           backgroundColor:
             theme.palette.mode === "dark"
               ? "rgba(0, 0, 0, 0.7)" // dark mode - translucent dark
-              : "rgba(255, 255, 255, 0.95)", // light mode - translucent white
+              : scrolled
+              ? "#ffffff"
+              : "rgba(0, 0, 0, 0.7)", // light mode - translucent white
 
           // height: 70, // small height
           justifyContent: "center",

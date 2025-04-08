@@ -15,22 +15,25 @@ import "slick-carousel/slick/slick-theme.css";
 const slides = [
   {
     id: 1,
-    image: "/images/banner-placeholder.png",
-    heading: "Quality and Craft in",
+    image: "/images/hero1.jpg",
+    heading:
+      "Delivering Excellence Through Unmatched Quality and Thoughtful Craftsmanship in ",
     headingSub: "Every Stitch",
     subtext: "Tailored to your unique style",
   },
   {
     id: 2,
-    image: "/images/banner-placeholder.png",
-    heading: "Elevate Your Wardrobe",
-    heading: "Elevate Your",
+    image: "/images/hero4.jpg",
+    heading:
+      "Blending Innovation, Quality, and Craft to Build Meaningful Digital Solutions",
+    headingSub: "Style with Confidence",
     subtext: "Custom-made elegance",
   },
   {
     id: 3,
-    image: "/images/banner-placeholder.png",
-    heading: "Quality and Craft in",
+    image: "/images/hero5.jpg",
+    heading:
+      "Where Vision Becomes Reality Through Quality-First Design and Expert Craft",
     headingSub: "Every Stitch",
     subtext: "Tailored to your unique style",
   },
@@ -69,23 +72,14 @@ export default function HeroSlider() {
         sx={{
           width: "10px",
           height: "10px",
-          bgcolor: "#ccc",
+          bgcolor: "#fff",
           borderRadius: "50%",
           display: "inline-block",
           mx: "4px",
-          transition: "all 0.3s ease",
+          opacity: 0.5,
         }}
       />
     ),
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          dots: true,
-          arrows: false,
-        },
-      },
-    ],
   };
 
   return (
@@ -95,14 +89,14 @@ export default function HeroSlider() {
           <Box
             key={slide.id}
             sx={{
-              height: { xs: "100vh", md: "100vh" },
-              backgroundImage: `url(${slide.image})`,
+              height: "100vh",
+              backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url(${slide.image})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
+              filter: "brightness(1.05)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              color: theme.palette.mode === "dark" ? "#fff" : "#000",
               px: 2,
             }}
           >
@@ -110,49 +104,47 @@ export default function HeroSlider() {
               sx={{
                 display: "flex",
                 justifyContent: "center",
-                alignItems: "center",
-                height: { xs: "100vh", md: "90vh" },
+                alignItems: "flex-end",
+                height: "100%",
+                pb: { xs: 8, sm: 10, md: 12 }, // Padding bottom to lift text slightly from bottom
               }}
             >
               <Container
                 maxWidth="md"
                 sx={{
                   textAlign: "start",
-                  ...(!isMobile && { mr: 6, pt: 5 }),
+                  color: "#fff",
                 }}
               >
                 <Typography
-                  variant="h2"
-                  fontWeight="bold"
+                  variant="h4"
+                  fontWeight={600}
                   gutterBottom
                   sx={{
-                    fontSize: {
-                      xs: "2rem",
-                      sm: "2.5rem",
-                      md: "3rem",
-                    },
+                    fontSize: { xs: "2rem", sm: "2.3rem", md: "2.5rem" },
+                    textShadow: "0 2px 6px rgba(0,0,0,0.4)",
                   }}
                 >
                   {slide.heading}
                 </Typography>
                 <Typography
-                  variant="h2"
-                  fontWeight="bold"
+                  variant="h4"
+                  fontWeight={600}
                   gutterBottom
                   sx={{
-                    fontSize: {
-                      xs: "2rem",
-                      sm: "2.5rem",
-                      md: "3rem",
-                    },
+                    fontSize: { xs: "2rem", sm: "2.3rem", md: "2.5rem" },
+                    textShadow: "0 2px 6px rgba(0,0,0,0.4)",
                   }}
                 >
                   {slide.headingSub}
                 </Typography>
                 <Typography
                   variant="h6"
-                  gutterBottom
-                  sx={{ fontSize: { xs: "1rem", md: "1.25rem" } }}
+                  sx={{
+                    fontSize: { xs: "1rem", md: "1.25rem" },
+                    color: "#f0f0f0",
+                    mt: 1,
+                  }}
                 >
                   {slide.subtext}
                 </Typography>
@@ -161,7 +153,6 @@ export default function HeroSlider() {
                   sx={{
                     display: "flex",
                     flexDirection: { xs: "column", sm: "row" },
-                    justifyContent: "start",
                     gap: 2,
                     mt: 4,
                   }}
@@ -169,28 +160,28 @@ export default function HeroSlider() {
                   <Button
                     variant="contained"
                     sx={{
-                      width: "150px",
                       backgroundColor: "#2A5A14",
                       borderRadius: "8px",
-
-                      // maxWidth: {
-                      //   xs: "100%",
-                      //   sm: "auto",
-                      //   backgroundColor: "#2A5A14",
-                      // },
+                      width: { xs: "100%", sm: "160px" },
+                      fontWeight: "bold",
+                      color: "#fff",
+                      boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
                     }}
                   >
                     Book Appointment
                   </Button>
                   <Button
-                    variant="contained"
+                    variant="outlined"
                     color="inherit"
-                    size="large"
-                    fullWidth
                     sx={{
-                      maxWidth: { xs: "100%", sm: "auto" },
-                      width: "170px",
                       borderRadius: "8px",
+                      width: { xs: "100%", sm: "180px" },
+                      fontWeight: "bold",
+                      color: "#fff",
+                      borderColor: "#fff",
+                      "&:hover": {
+                        backgroundColor: "rgba(255,255,255,0.1)",
+                      },
                     }}
                   >
                     View Collections
