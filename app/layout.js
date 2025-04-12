@@ -6,6 +6,7 @@ import getTheme from "./theme";
 import "./globals.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import WhatsAppButton from "./components/WhatsappButton";
 
 // Create Color Mode Context
 export const ColorModeContext = createContext({ toggleColorMode: () => {} });
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
           <ThemeProvider theme={theme}>
             <CssBaseline />
             {children}
+            <WhatsAppButton />
           </ThemeProvider>
         </ColorModeContext.Provider>
       </body>

@@ -40,6 +40,13 @@ const slides = [
 ];
 
 export default function HeroSlider() {
+  const handleScroll = (sectionId) => {
+    const element = document.getElementById(sectionId.toLowerCase());
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -159,6 +166,7 @@ export default function HeroSlider() {
                 >
                   <Button
                     variant="contained"
+                    onClick={() => handleScroll("contact")}
                     sx={{
                       backgroundColor: "#2A5A14",
                       borderRadius: "8px",
@@ -173,6 +181,7 @@ export default function HeroSlider() {
                   <Button
                     variant="outlined"
                     color="inherit"
+                    onClick={() => handleScroll("collections")}
                     sx={{
                       borderRadius: "8px",
                       width: { xs: "100%", sm: "180px" },

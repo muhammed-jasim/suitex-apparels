@@ -1,10 +1,23 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Box, Typography, Button } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Button,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 
 const CallToAction = () => {
   const [isVisible, setIsVisible] = useState(false);
-
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const handleScroll = (sectionId) => {
+    const element = document.getElementById(sectionId.toLowerCase());
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   useEffect(() => {
     // Trigger animation on mount
     setIsVisible(true);
@@ -52,6 +65,7 @@ const CallToAction = () => {
       <Button
         variant="contained"
         size="large"
+        onClick={() => handleScroll("Contact")}
         sx={{
           backgroundColor: "#fff",
           color: "#2A5A14",

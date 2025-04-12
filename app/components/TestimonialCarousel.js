@@ -209,7 +209,7 @@ export default function TestimonialsSection() {
                 minWidth: 280,
                 p: 4,
                 borderRadius: 2,
-                border: "1px solid #f0f0f0",
+                // border: "1px solid #f0f0f0",
                 opacity: isVisible ? 1 : 0,
                 animation: isVisible
                   ? idx === 0

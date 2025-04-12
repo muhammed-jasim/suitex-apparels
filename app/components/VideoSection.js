@@ -44,7 +44,7 @@ export default function SustainableTextile() {
     {
       title: "Quality First",
       description: "Premium grade materials",
-      highlighted: true,
+      highlighted: false,
     },
     {
       title: "Innovation",
@@ -163,9 +163,9 @@ export default function SustainableTextile() {
                   key={idx}
                   sx={{
                     p: 2,
-                    border: feature.highlighted
-                      ? "2px solid #2196f3"
-                      : "1px solid #e0e0e0",
+                    // border: feature.highlighted
+                    //   ? "2px solid #2196f3"
+                    //   : "1px solid #e0e0e0",
                     borderRadius: 2,
                     boxShadow: feature.highlighted
                       ? "0 4px 12px rgba(33, 150, 243, 0.2)"
@@ -220,9 +220,9 @@ export default function SustainableTextile() {
                       display: "flex",
                       flexDirection: "column",
                       justifyContent: "space-between",
-                      border: feature.highlighted
-                        ? "2px solid #2196f3"
-                        : "1px solid #e0e0e0",
+                      // border: feature.highlighted
+                      //   ? "2px solid #2196f3"
+                      //   : "1px solid #e0e0e0",
                       borderRadius: 2,
                       boxShadow: feature.highlighted
                         ? "0 4px 12px rgba(33, 150, 243, 0.2)"

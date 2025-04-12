@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Grid, Typography, Card, CardContent } from "@mui/material";
-import { styled } from "@mui/system";
+import { styled, useMediaQuery, useTheme } from "@mui/system";
 import Image from "next/image";
 
 // Styled component for top green cards
@@ -30,6 +30,9 @@ const FeatureCard = styled(Card)(({ theme }) => ({
 }));
 
 export default function AboutSection() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <Box sx={{ pt: 5, px: 2, scrollMarginTop: "50px" }} id="about">
       <Typography
@@ -68,7 +71,14 @@ export default function AboutSection() {
             desc: "Guaranteed satisfaction with every garment.",
           },
         ].map((item, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={4}
+            key={index}
+            width={isMobile ? "100%" : undefined}
+          >
             <GreenCard>
               <Typography variant="subtitle1" fontWeight={600}>
                 {item.title}
@@ -103,7 +113,14 @@ export default function AboutSection() {
             desc: "Guaranteed satisfaction",
           },
         ].map((item, index) => (
-          <Grid item xs={12} sm={6} md={3} key={index}>
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={3}
+            key={index}
+            width={isMobile ? "100%" : undefined}
+          >
             <FeatureCard elevation={1}>
               <Box mb={2}>
                 <Image
