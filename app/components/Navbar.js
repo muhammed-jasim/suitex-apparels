@@ -81,7 +81,8 @@ export default function Navbar() {
             alt="Logo"
             width={isMobile ? 100 : 200}
             height={isMobile ? 50 : 60}
-            style={{ objectFit: "contain" }}
+            style={{ objectFit: "contain", cursor: "pointer" }}
+            onClick={() => handleScroll("home")}
           />
 
           {!isMobile && (
