@@ -48,7 +48,7 @@ export default function HeroSlider() {
   };
 
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const settings = {
     dots: true,
@@ -97,23 +97,54 @@ export default function HeroSlider() {
             key={slide.id}
             sx={{
               height: "100vh",
-              backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url(${slide.image})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              filter: "brightness(1.05)",
+              position: "relative",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               px: 2,
             }}
           >
+            {/* Background Image Layer */}
             <Box
               sx={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                backgroundImage: `url(${slide.image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                filter: "brightness(0.5)", // darken image only
+                zIndex: 1,
+              }}
+            />
+
+            {/* Overlay for smooth color blend */}
+            <Box
+              sx={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                background:
+                  "linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.7))",
+                zIndex: 2,
+              }}
+            />
+
+            {/* Text Content */}
+            <Box
+              sx={{
+                position: "relative",
+                zIndex: 3,
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "flex-end",
                 height: "100%",
-                pb: { xs: 8, sm: 10, md: 12 }, // Padding bottom to lift text slightly from bottom
+                pb: { xs: 6, sm: 8, md: 10 },
+                width: "100%",
               }}
             >
               <Container
@@ -128,7 +159,7 @@ export default function HeroSlider() {
                   fontWeight={600}
                   gutterBottom
                   sx={{
-                    fontSize: { xs: "2rem", sm: "2.3rem", md: "2.5rem" },
+                    fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
                     textShadow: "0 2px 6px rgba(0,0,0,0.4)",
                   }}
                 >
@@ -139,7 +170,7 @@ export default function HeroSlider() {
                   fontWeight={600}
                   gutterBottom
                   sx={{
-                    fontSize: { xs: "2rem", sm: "2.3rem", md: "2.5rem" },
+                    fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
                     textShadow: "0 2px 6px rgba(0,0,0,0.4)",
                   }}
                 >
@@ -148,8 +179,8 @@ export default function HeroSlider() {
                 <Typography
                   variant="h6"
                   sx={{
-                    fontSize: { xs: "1rem", md: "1.25rem" },
-                    color: "#f0f0f0",
+                    fontSize: { xs: "0.95rem", sm: "1.1rem", md: "1.25rem" },
+                    color: "#e0e0e0",
                     mt: 1,
                   }}
                 >
