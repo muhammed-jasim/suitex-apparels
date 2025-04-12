@@ -158,7 +158,12 @@ export default function Navbar() {
             <IconButton onClick={toggleDrawer(false)}>
               <CloseIcon />
             </IconButton>
-            <IconButton onClick={colorMode.toggleColorMode}>
+            <IconButton
+              onClick={() => {
+                colorMode.toggleColorMode();
+                setDrawerOpen(false);
+              }}
+            >
               {theme.palette.mode === "dark" ? (
                 <DarkModeIcon sx={{ color: "#fdd835" }} /> // Yellow-ish for dark mode
               ) : (
@@ -185,7 +190,10 @@ export default function Navbar() {
               <Divider sx={{ my: 1 }} />
               <ListItem>
                 <Button
-                  onClick={() => handleScroll("Contact")}
+                  onClick={() => {
+                    handleScroll("Contact");
+                    setDrawerOpen(false);
+                  }}
                   variant="contained"
                   fullWidth
                   sx={{

@@ -25,33 +25,33 @@ const machines = [
     image: "/images/tailoringMechine1.jpg",
   },
   {
-    title: "Dyeing Chamber",
+    title: "Dyeing Chamber A",
     description: "Precision color processing",
     image: "/images/tailorMechine.jpg",
   },
   {
-    title: "Dyeing Chamber",
+    title: "Dyeing Chamber B",
     description: "Precision color processing",
     image: "/images/tailoringMechine1.jpg",
   },
   {
-    title: "Dyeing Chamber",
-    description: "Precision color processing",
+    title: "Stitching Station",
+    description: "Automated sewing unit",
     image: "/images/tailorMechine.jpg",
   },
   {
-    title: "Dyeing Chamber",
-    description: "Precision color processing",
+    title: "Finishing Line",
+    description: "Final quality checks",
     image: "/images/tailoringMechine1.jpg",
   },
   {
-    title: "Dyeing Chamber",
-    description: "Precision color processing",
+    title: "Embroidery Machine",
+    description: "High-detail design system",
     image: "/images/tailorMechine.jpg",
   },
   {
-    title: "Dyeing Chamber",
-    description: "Precision color processing",
+    title: "Steam Press Station",
+    description: "Professional garment finishing",
     image: "/images/tailoringMechine1.jpg",
   },
 ];
@@ -119,6 +119,7 @@ export default function MachinerySection() {
               sm={6}
               md={3}
               key={index}
+              width={isMobile ? "100%" : undefined}
               sx={{
                 display: { xs: "flex", sm: "flex", md: "block" },
                 justifyContent: { xs: "center", sm: "center", md: "initial" },
@@ -136,6 +137,7 @@ export default function MachinerySection() {
                   transitionDelay: `${0.2 + index * 0.05}s`,
                   "&:hover": {
                     transform: "translateY(-5px)",
+                    boxShadow: "0 8px 16px rgba(0,0,0,0.2)",
                   },
                 }}
               >
@@ -144,6 +146,7 @@ export default function MachinerySection() {
                   height="180"
                   image={machine.image}
                   alt={machine.title}
+                  loading="lazy"
                 />
                 <CardContent>
                   <Typography fontWeight={600}>{machine.title}</Typography>
