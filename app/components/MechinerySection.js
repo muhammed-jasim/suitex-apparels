@@ -34,26 +34,6 @@ const machines = [
     description: "Precision color processing",
     image: "/images/tailoringMechine1.jpg",
   },
-  {
-    title: "Stitching Station",
-    description: "Automated sewing unit",
-    image: "/images/tailorMechine.jpg",
-  },
-  {
-    title: "Finishing Line",
-    description: "Final quality checks",
-    image: "/images/tailoringMechine1.jpg",
-  },
-  {
-    title: "Embroidery Machine",
-    description: "High-detail design system",
-    image: "/images/tailorMechine.jpg",
-  },
-  {
-    title: "Steam Press Station",
-    description: "Professional garment finishing",
-    image: "/images/tailoringMechine1.jpg",
-  },
 ];
 
 export default function MachinerySection() {

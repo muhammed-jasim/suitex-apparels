@@ -10,14 +10,17 @@ import {
 
 const CallToAction = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const phoneNumber = "7510140803";
+  const message = "Hello! I'm interested in your services.";
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-  const handleScroll = (sectionId) => {
-    const element = document.getElementById(sectionId.toLowerCase());
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  const handleClick = () => {
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(url, "_blank");
   };
+
   useEffect(() => {
     // Trigger animation on mount
     setIsVisible(true);
@@ -65,7 +68,7 @@ const CallToAction = () => {
       <Button
         variant="contained"
         size="large"
-        onClick={() => handleScroll("Contact")}
+        onClick={handleClick}
         sx={{
           backgroundColor: "#fff",
           color: "#2A5A14",
@@ -83,7 +86,7 @@ const CallToAction = () => {
           },
         }}
       >
-        Book Now
+        Contact Sales
       </Button>
     </Box>
   );

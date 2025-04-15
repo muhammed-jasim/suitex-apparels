@@ -184,7 +184,7 @@ export default function SustainableTextile() {
                     width: "100%",
                   }}
                 >
-                  <CardContent>
+                  <CardContent sx={{ textAlign: "center" }}>
                     <Typography
                       variant="h6"
                       sx={{

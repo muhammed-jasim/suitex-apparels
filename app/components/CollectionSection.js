@@ -16,11 +16,12 @@ import { styled } from "@mui/system";
 
 // Categories
 const categories = [
-  "All Collections",
-  "Suits",
-  "Uniforms",
-  "Wedding",
-  "Formal",
+  "School and College Uniforms",
+  "Corporate Uniforms",
+  "Hospital Uniforms",
+  "Aviation Uniforms",
+  "Industrial Uniforms",
+  "Jersey / T-Shirt",
 ];
 
 // Collection items
@@ -28,31 +29,31 @@ const collections = [
   {
     title: "Premium Suit Collection",
     price: "$899",
-    category: "Suits",
+    category: "Hospital Uniforms",
     features: ["100% Wool Blend", "Custom Fitting", "Premium Lining"],
     image: "/images/redSuit.jpg",
   },
   {
     title: "School Uniforms",
     price: "$599",
-    category: "Uniforms",
+    category: "Aviation Uniforms",
     features: ["Modern cut", "Premium Stitching", "Detailed Embroidery"],
     image: "/images/uniform1.jpg",
   },
   {
     title: "Wedding Collection",
     price: "$1299",
-    category: "Wedding",
+    category: "Jersey / T-Shirt",
     features: ["Luxury wedding attire", "Hand Stitched", "Finest Fabric"],
     image: "/images/suit3.jpg",
   },
   {
     title: "Business Formal",
     price: "$799",
-    category: "Formal",
+    category: "School and College Uniforms",
     features: [
       "Professional business suits",
-      "All Season Fabric",
+      "School and College Uniforms",
       "Modern Cut",
     ],
     image: "/images/suit2.jpg",
@@ -60,14 +61,28 @@ const collections = [
   {
     title: "Evening Wear",
     price: "$999",
-    category: "Formal",
+    category: "Hospital Uniforms",
     features: ["Elegant evening collection", "Custom Fit", "Luxe Details"],
     image: "/images/suit3.jpg",
   },
   {
     title: "Summer Collection",
     price: "$699",
-    category: "Suits",
+    category: "School and College Uniforms",
+    features: ["Breathable Fabric", "Easy Care", "Perfect Fit"],
+    image: "/images/uniform2.jpg",
+  },
+  {
+    title: "Evening Wear",
+    price: "$999",
+    category: "Hospital Uniforms",
+    features: ["Elegant evening collection", "Custom Fit", "Luxe Details"],
+    image: "/images/suit3.jpg",
+  },
+  {
+    title: "Summer Collection",
+    price: "$699",
+    category: "Corporate Uniforms",
     features: ["Breathable Fabric", "Easy Care", "Perfect Fit"],
     image: "/images/uniform2.jpg",
   },
@@ -94,12 +109,15 @@ const StyledCard = styled(Card)({
 });
 
 export default function CollectionsSection() {
-  const [activeCategory, setActiveCategory] = useState("All Collections");
+  const [activeCategory, setActiveCategory] = useState(
+    "School and College Uniforms"
+  );
 
   const filtered =
-    activeCategory === "All Collections"
-      ? collections
-      : collections.filter((item) => item.category === activeCategory);
+    // activeCategory === "School and College Uniforms"
+    //   ? collections
+    //   :
+    collections.filter((item) => item.category === activeCategory);
 
   return (
     <Box

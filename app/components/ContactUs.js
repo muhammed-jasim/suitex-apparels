@@ -13,6 +13,7 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  useTheme,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
@@ -21,91 +22,40 @@ import PhoneIcon from "@mui/icons-material/Phone";
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(4),
-  borderRadius: theme.spacing(1),
+  borderRadius: theme.spacing(2),
   width: "100%",
-  boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.05)",
+  boxShadow:
+    theme.palette.mode === "dark"
+      ? "0px 4px 20px rgba(0, 0, 0, 0.3)"
+      : "0px 4px 12px rgba(0, 0, 0, 0.1)",
+  backgroundColor: theme.palette.background.paper,
 }));
 
 const StyledButton = styled(Button)(({ theme }) => ({
   backgroundColor: "#2e7d32",
   color: "white",
   padding: theme.spacing(1.5),
+  fontWeight: 600,
   "&:hover": {
     backgroundColor: "#1b5e20",
   },
 }));
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
-  const [errors, setErrors] = useState({});
-  const [submitted, setSubmitted] = useState(false);
-
+  const theme = useTheme();
   const [visible, setVisible] = useState(false);
   const sectionRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        setVisible(entry.isIntersecting);
-      },
+      ([entry]) => setVisible(entry.isIntersecting),
       { threshold: 0.2 }
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
     };
   }, []);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-
-    if (errors[name]) {
-      setErrors((prev) => ({
-        ...prev,
-        [name]: "",
-      }));
-    }
-  };
-
-  const validate = () => {
-    const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = "Name is required";
-    if (!formData.email.trim()) newErrors.email = "Email is required";
-    else if (!/\S+@\S+\.\S+/.test(formData.email))
-      newErrors.email = "Email is invalid";
-    if (!formData.message.trim()) newErrors.message = "Message is required";
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validate()) {
-      console.log("Form submitted:", formData);
-      setSubmitted(true);
-      setTimeout(() => {
-        setFormData({ name: "", email: "", phone: "", message: "" });
-        setSubmitted(false);
-      }, 3000);
-    }
-  };
 
   return (
     <Box
@@ -114,7 +64,7 @@ export default function ContactPage() {
       sx={{
         scrollMarginTop: "10px",
         opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0px)" : "translateY(30px)",
+        transform: visible ? "translateY(0)" : "translateY(30px)",
         transition: "all 0.8s ease",
       }}
     >
@@ -145,80 +95,37 @@ export default function ContactPage() {
         <Box
           display="flex"
           justifyContent="center"
-          alignItems="flex-start"
+          alignItems="center"
           flexDirection={{ xs: "column", md: "row" }}
           gap={4}
         >
-          {/* Form */}
-          <Box flex={{ xs: "1 1 100%", md: "0 0 50%" }}>
-            <StyledPaper component="form" onSubmit={handleSubmit}>
-              <Typography variant="h6" gutterBottom>
-                Send us a message
-              </Typography>
-
-              <TextField
-                fullWidth
-                label="Your Name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                margin="normal"
-                required
-                error={!!errors.name}
-                helperText={errors.name}
-              />
-
-              <TextField
-                fullWidth
-                label="Email Address"
-                name="email"
-                type="email"
-                value={formData.email}
-                onChange={handleChange}
-                margin="normal"
-                required
-                error={!!errors.email}
-                helperText={errors.email}
-              />
-
-              <TextField
-                fullWidth
-                label="Phone Number"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                margin="normal"
-              />
-
-              <TextField
-                fullWidth
-                label="Your Message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                margin="normal"
-                required
-                multiline
-                rows={4}
-                error={!!errors.message}
-                helperText={errors.message}
-              />
-
-              <Box mt={3}>
-                <StyledButton
-                  type="submit"
-                  fullWidth
-                  variant="contained"
-                  size="large"
-                  disabled={submitted}
-                >
-                  {submitted ? "Message Sent!" : "Send Message"}
-                </StyledButton>
-              </Box>
-            </StyledPaper>
+          {/* Google Map */}
+          <Box
+            flex={{ xs: "1 1 100%", md: "0 0 50%" }}
+            sx={{
+              height: { xs: 300, md: 450 },
+              borderRadius: 2,
+              overflow: "hidden",
+              boxShadow:
+                theme.palette.mode === "dark"
+                  ? "0px 4px 20px rgba(0,0,0,0.4)"
+                  : "0px 4px 12px rgba(0,0,0,0.1)",
+            }}
+          >
+            <iframe
+              title="map"
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              loading="lazy"
+              allowFullScreen
+              style={{ border: 0 }}
+              referrerPolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.057764536959!2d76.3676074!3d10.094353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0809e168dc06ff%3A0xbbbdf84ee71e86e7!2sSuitex%20Apparels!5e0!3m2!1sen!2sin!4v1744739180137!5m2!1sen!2sin"
+            />
           </Box>
 
-          {/* Info */}
+          {/* Contact Info */}
           <Box
             flex={{ xs: "1 1 100%", md: "0 0 50%" }}
             display="flex"
@@ -277,23 +184,17 @@ export default function ContactPage() {
                 Business Hours
               </Typography>
               <Grid container spacing={1}>
+                {[
+                  ["Monday - Friday:", "9:00 AM - 6:00 PM"],
+                  ["Saturday:", "10:00 AM - 4:00 PM"],
+                  ["Sunday:", "Closed"],
+                ].map(([label, time], index) => (
+                  <Grid item xs={6} key={index}>
+                    <Typography variant="body2">{label}</Typography>
+                  </Grid>
+                ))}
                 <Grid item xs={6}>
-                  <Typography variant="body2">Monday - Friday:</Typography>
-                </Grid>
-                <Grid item xs={6}>
-                  <Typography variant="body2">9:00 AM - 6:00 PM</Typography>
-                </Grid>
-                <Grid item xs={6}>
-                  <Typography variant="body2">Saturday:</Typography>
-                </Grid>
-                <Grid item xs={6}>
-                  <Typography variant="body2">10:00 AM - 4:00 PM</Typography>
-                </Grid>
-                <Grid item xs={6}>
-                  <Typography variant="body2">Sunday:</Typography>
-                </Grid>
-                <Grid item xs={6}>
-                  <Typography variant="body2">Closed</Typography>
+                  <Typography variant="body2">{""}</Typography>
                 </Grid>
               </Grid>
             </StyledPaper>

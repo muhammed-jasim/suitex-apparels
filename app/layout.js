@@ -27,6 +27,14 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="favicon1.ico" />
+        <meta
+          name="description"
+          content="Suitex Apparels - Premium tailoring and apparel services."
+        />
+        <title>Suitex Apparels</title>
+      </head>
       <body>
         <ColorModeContext.Provider value={colorMode}>
           <ThemeProvider theme={theme}>
