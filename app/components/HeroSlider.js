@@ -141,10 +141,12 @@ export default function HeroSlider() {
                 zIndex: 3,
                 display: "flex",
                 justifyContent: "center",
-                alignItems: "flex-end",
+                alignItems: "center",
                 height: "100%",
-                pb: { xs: 6, sm: 8, md: 10 },
+                // pb: { xs: 6, sm: 8, md: 10 },
                 width: "100%",
+                // border: "1px solid red",
+                pt: 10,
               }}
             >
               <Container
