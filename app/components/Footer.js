@@ -94,12 +94,14 @@ const Footer = () => {
             >
               Contact Us
             </Typography>
-            <Typography variant="body2">Karassery Mukkam</Typography>
-            <Typography variant="body2">Calicut 673602</Typography>
+            <Typography variant="body2">Edayapuram Aluva</Typography>
+            <Typography variant="body2">Eranakulam kerala 683101</Typography>
             <Typography variant="body2" sx={{ mt: 1 }}>
-              +91 7510140803
+              +91 9037879855
             </Typography>
-            <Typography variant="body2">info@suitexapparels.com</Typography>
+            <Typography variant="body2">
+              suitexapparelsofficial@gmail.com
+            </Typography>
           </Grid>
         </Grid>
 

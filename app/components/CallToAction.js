@@ -10,7 +10,7 @@ import {
 
 const CallToAction = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const phoneNumber = "7510140803";
+  const phoneNumber = "9037879855";
   const message = "Hello! I'm interested in your services.";
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));

@@ -154,9 +154,9 @@ export default function ContactPage() {
                     primary="Email"
                     secondary={
                       <>
-                        info@suitexapparels.com
+                        suitexapparelsofficial@gmail.com
                         <br />
-                        support@suitexapparels.com
+                        info@suitexapparels.com
                       </>
                     }
                   />
@@ -169,9 +169,9 @@ export default function ContactPage() {
                     primary="Phone"
                     secondary={
                       <>
-                        +1 (234) 567-8900
+                        +91 9037879855
                         <br />
-                        +1 (234) 567-8901
+                        +91 9037879855
                       </>
                     }
                   />
