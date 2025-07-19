@@ -15,15 +15,16 @@ import "slick-carousel/slick/slick-theme.css";
 const slides = [
   {
     id: 1,
-    image: "/images/hero1.jpg",
-    heading:
-      "Delivering Excellence Through Unmatched Quality and Thoughtful Craftsmanship in ",
+    // image: "/images/hero1.jpg",
+    image: "/images/main-1.jpeg",
+    heading: "Quality and Craft In Every Stitch ",
     headingSub: "Every Stitch",
     subtext: "Tailored to your unique style",
   },
   {
     id: 2,
-    image: "/images/hero4.jpg",
+    // image: "/images/hero4.jpg",
+    image: "/images/main-2.jpeg",
     heading:
       "Blending Innovation, Quality, and Craft to Build Meaningful Digital Solutions",
     headingSub: "Style with Confidence",
@@ -31,7 +32,8 @@ const slides = [
   },
   {
     id: 3,
-    image: "/images/hero5.jpg",
+    // image: "/images/hero5.jpg",
+    image: "/images/main-3.jpg",
     heading:
       "Where Vision Becomes Reality Through Quality-First Design and Expert Craft",
     headingSub: "Every Stitch",

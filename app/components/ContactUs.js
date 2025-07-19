@@ -143,7 +143,7 @@ export default function ContactPage() {
                   </ListItemIcon>
                   <ListItemText
                     primary="Address"
-                    secondary="123 Main Street, City Name, State, Country - 12345"
+                    secondary="BId. No: 17/482A, Asokapuram P. O, Edayppuram Aluva Eranakulam kerala 683101"
                   />
                 </ListItem>
                 <ListItem disableGutters>
@@ -154,8 +154,8 @@ export default function ContactPage() {
                     primary="Email"
                     secondary={
                       <>
-                        suitexapparelsofficial@gmail.com
-                        <br />
+                        {/* suitexapparelsofficial@gmail.com
+                        <br /> */}
                         info@suitexapparels.com
                       </>
                     }
@@ -171,7 +171,7 @@ export default function ContactPage() {
                       <>
                         +91 9037879855
                         <br />
-                        +91 9037879855
+                        +91 9037879852
                       </>
                     }
                   />

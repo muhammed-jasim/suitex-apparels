@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  trailingSlash: true, // optional but helpful for static hosting
+  trailingSlash: false, // optional but helpful for static hosting
+  images: {
+    unoptimized: true,
+  },
 };
 
 module.exports = nextConfig;

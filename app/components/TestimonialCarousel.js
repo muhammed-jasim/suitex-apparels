@@ -18,45 +18,45 @@ import "swiper/css/pagination";
 
 const testimonials = [
   {
-    name: "David Anderson",
-    position: "Business Professional",
+    name: "Afin Jaffer",
+    position: "Wander Holidays",
     rating: 5,
-    image: "/images/avatar.jpg",
+    // image: "/images/avatar.jpg",
     quote:
-      "The quality of tailoring at Suitex Apparels is exceptional. Their attention to detail and customer service made the entire experience outstanding.",
+      "We ordered embroidered T-shirts from Suitex Apparels for our travel team, and the results were fantastic. The embroidery was clean, durable, and gave a premium feel to our branding. Comfortable and delivered on time—highly recommended for quality custom apparel!",
   },
   {
-    name: "Sarah Williams",
-    position: "Corporate Executive",
+    name: "Abhinav",
+    position: " Inspire Ink Creatives, Co-founder",
     rating: 5,
-    image: "/images/avatar.jpg",
+    // image: "/images/avatar.jpg",
     quote:
-      "I've been a loyal customer for over 3 years. Their consistent quality and professional service keeps me coming back.",
+      "As a creative agency, we’re particular about every detail—especially our team's appearance. Suitex Apparels consistently delivers high-quality uniforms that reflect our brand’s identity. The fabric, fit, and timely delivery show their professionalism—proud to have them as our apparel partner.",
   },
   {
-    name: "Michael Chen",
-    position: "Entrepreneur",
+    name: "Abdul Rashad",
+    position: "Al Barakah Travels, Kuwait",
     rating: 5,
-    image: "/images/avatar.jpg",
+    // image: "/images/avatar.jpg",
     quote:
-      "Finding the perfect fit was always a challenge until I discovered Suitex Apparels. Their expertise in tailoring is unmatched.",
+      "We ordered customized embroidered uniforms from Suitex Apparels for our travel team in Kuwait and were extremely satisfied with the quality. The stitching, fabric, and embroidery were detailed and well-crafted. Suitex was professional, clear in communication, and delivered on time—we look forward to working with them again.",
   },
   {
-    name: "Jennifer Lopez",
-    position: "Marketing Director",
+    name: "Muhammed Jasim k",
+    position: "Founder - Webryxon",
     rating: 5,
-    image: "/images/avatar.jpg",
+    // image: "/images/avatar.jpg",
     quote:
-      "Their attention to current trends while maintaining classic elegance is what sets Suitex Apparels apart from other tailors I've worked with.",
+      "As a web agency, we value quality, precision, and strong branding—and Suitex Apparels delivered exactly that. I had the chance to visit their production unit, which uses modern machinery and efficient processes. The custom apparel was top-notch, and their team was professional and timely—highly recommended!",
   },
-  {
-    name: "Robert Kim",
-    position: "Financial Advisor",
-    rating: 5,
-    image: "/images/avatar.jpg",
-    quote:
-      "As someone who wears suits daily, quality matters. Suitex Apparels delivers exceptional craftsmanship that stands the test of time.",
-  },
+  // {
+  //   name: "Robert Kim",
+  //   position: "Financial Advisor",
+  //   rating: 5,
+  //   image: "/images/avatar.jpg",
+  //   quote:
+  //     "As someone who wears suits daily, quality matters. Suitex Apparels delivers exceptional craftsmanship that stands the test of time.",
+  // },
 ];
 
 export default function TestimonialsSection() {

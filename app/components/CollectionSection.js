@@ -25,66 +25,137 @@ const categories = [
 ];
 
 // Collection items
+
+// aviation uniforms
 const collections = [
   {
-    title: "Premium Suit Collection",
-    price: "$899",
-    category: "Hospital Uniforms",
-    features: ["100% Wool Blend", "Custom Fitting", "Premium Lining"],
-    image: "/images/redSuit.jpg",
-  },
-  {
-    title: "School Uniforms",
+    title: "Elegant Airline Crew Uniform",
     price: "$599",
     category: "Aviation Uniforms",
-    features: ["Modern cut", "Premium Stitching", "Detailed Embroidery"],
-    image: "/images/uniform1.jpg",
+    features: [
+      "Tailored Fit",
+      "Professional Airline Look",
+      "Easy Identification",
+    ],
+    image: "/images/aviation-1.jpg",
   },
   {
-    title: "Wedding Collection",
+    title: "Modern Executive Business Uniform",
+    price: "$599",
+    category: "Aviation Uniforms",
+    features: ["Tailored Suits", "Premium Stitching", "Business Formal Look"],
+    image: "/images/aviation-2.jpg",
+  },
+
+  // industrial uniforms
+  {
+    title: "Heavy-Duty Industrial Coveralls for Workshop Crew",
+    price: "$599",
+    category: "Industrial Uniforms",
+    features: [
+      "Reflective Strips for Visibility",
+      "Easy to Wear and Remove",
+      "Industrial-Grade Fabric",
+    ],
+    image: "/images/industrial-1.jpg",
+  },
+  {
+    title: "Functional Engineering Workwear",
+    price: "$599",
+    category: "Industrial Uniforms",
+    features: [
+      "Breathable Material",
+      "Utility Pockets",
+      "Flexible for Movement",
+    ],
+    image: "/images/industrial-2.jpg",
+  },
+
+  // jersey / t-shirt
+
+  {
+    title: "Performance Sports Jersey",
     price: "$1299",
     category: "Jersey / T-Shirt",
-    features: ["Luxury wedding attire", "Hand Stitched", "Finest Fabric"],
-    image: "/images/suit3.jpg",
+    features: [
+      "Athletic Fit for Mobility",
+      "Ideal for Outdoor and Indoor Sports",
+    ],
+    image: "/images/jersey-1.jpg",
   },
   {
-    title: "Business Formal",
-    price: "$799",
+    title: "T-Shirts ",
+    price: "$1299",
+    category: "Jersey / T-Shirt",
+    features: ["Unisex Standard Fit", "Easy to Wash & Maintain"],
+    image: "/images/t-shirt.jpg",
+  },
+
+  {
+    title: "Sports Team Jersey",
+    price: "$1299",
+    category: "Jersey / T-Shirt",
+    features: ["Lightweight Material", "Stretchable and Durable"],
+    image: "/images/jersey-2.jpg",
+  },
+
+  // school and college uniforms
+
+  {
+    title: "Classic Formal Uniform for Senior Students",
+    // price: "$799",
+    category: "School and College Uniforms",
+    features: ["Minimalist Style", "Professional Look", "Perfect Fit"],
+    image: "/images/school-1.jpg",
+  },
+  {
+    title: "Comfortable Everyday School Uniform for Kids",
+    // price: "$699",
     category: "School and College Uniforms",
     features: [
-      "Professional business suits",
-      "School and College Uniforms",
-      "Modern Cut",
+      "Casual Comfort",
+      "Easy Care",
+      "Perfect Fit",
+      "Durable Material",
     ],
-    image: "/images/suit2.jpg",
+    image: "/images/school-2.jpg",
   },
+
+  // Hospital uniforms
   {
-    title: "Evening Wear",
+    title: "Clinical Professionals",
     price: "$999",
     category: "Hospital Uniforms",
-    features: ["Elegant evening collection", "Custom Fit", "Luxe Details"],
-    image: "/images/suit3.jpg",
+    features: ["Lightweight Fabric", "Easy to Clean", "Minimal Design"],
+    image: "/images/hospital-1.jpg",
   },
   {
-    title: "Summer Collection",
-    price: "$699",
-    category: "School and College Uniforms",
-    features: ["Breathable Fabric", "Easy Care", "Perfect Fit"],
-    image: "/images/uniform2.jpg",
-  },
-  {
-    title: "Evening Wear",
+    title: "Hospital Uniforms for Medical Staff",
     price: "$999",
     category: "Hospital Uniforms",
-    features: ["Elegant evening collection", "Custom Fit", "Luxe Details"],
-    image: "/images/suit3.jpg",
+    features: [
+      "Clean and Confident Appearance",
+      "Multi-Pocket Utility",
+      "Blend of Style and Function",
+    ],
+    image: "/images/hospital-2.jpg",
   },
+
+  // corporate uniforms
+
   {
-    title: "Summer Collection",
+    title: "Executive Team Formal Uniform",
     price: "$699",
     category: "Corporate Uniforms",
-    features: ["Breathable Fabric", "Easy Care", "Perfect Fit"],
-    image: "/images/uniform2.jpg",
+    features: ["Team-Oriented Styling", "Professional Confidence"],
+    image: "/images/corporate-1.jpg",
+  },
+  {
+    title: "Modern Corporate Attire for Professionals",
+    price: "$699",
+    category: "Corporate Uniforms",
+    features: ["Polished Look", "Slim-Fit Design", "Comfortable Fabric"],
+    image: "/images/corporate-2.jpg",
   },
 ];
 

@@ -106,7 +106,7 @@ export default function SustainableTextile() {
               <iframe
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/a4FSo9Z3Xtc?si=yZJTIxnxkjPmiIS7"
+                src="https://www.youtube.com/embed/JzHCsSiovRk?si=X2L3gS8kJnPWBIB9"
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

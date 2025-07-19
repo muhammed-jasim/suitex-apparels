@@ -94,14 +94,14 @@ const Footer = () => {
             >
               Contact Us
             </Typography>
-            <Typography variant="body2">Edayapuram Aluva</Typography>
+            <Typography variant="body2">
+              BId. No: 17/482A, Asokapuram P. O, Edayppuram Aluva
+            </Typography>
             <Typography variant="body2">Eranakulam kerala 683101</Typography>
             <Typography variant="body2" sx={{ mt: 1 }}>
               +91 9037879855
             </Typography>
-            <Typography variant="body2">
-              suitexapparelsofficial@gmail.com
-            </Typography>
+            <Typography variant="body2">info@suitexapparels.com</Typography>
           </Grid>
         </Grid>
 

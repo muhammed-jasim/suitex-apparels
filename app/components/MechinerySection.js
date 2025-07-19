@@ -15,25 +15,31 @@ import {
 
 const machines = [
   {
-    title: "Industrial Loom",
-    description: "High-speed weaving machine",
-    image: "/images/tailorMechine.jpg",
+    title: "YiliJet Sublimation Printer",
+    description:
+      "The YiliJet Sublimation Printer is a high-performance inkjet printer designed for precision and efficiency in sublimation printing. With a sturdy build and spacious dimensions, it ensures consistent and high-quality output. Made in China.",
+    image: "/images/mechinery1.jpg",
+  },
+
+  {
+    title: "The China-Made Sheen-Brand 9-Color 12-Head Embroidery Machine",
+    description:
+      "The China-Made Sheen-Brand 9-Color 12-Head Embroidery Machine is a high-speed industrial machine for precise, multi-color embroidery on fabrics and garments. Its flatbed design ensures efficient mass production, making it ideal for large-scale embroidery businesses",
+    image: "/images/mechinery2.jpg",
   },
   {
-    title: "Spinning Unit",
-    description: "Advanced yarn production",
-    image: "/images/tailoringMechine1.jpg",
+    title: " Dicot fusing machine for collar pressing",
+    description:
+      "The Dicot fusing machine for collar pressing is a high-performance device designed to deliver precise heat and pressure, ensuring crisp, durable collar shapes. Equipped with advanced technology and a stable pressing system, it provides consistent results for professional-quality collar finishing.",
+    image: "/images/mechinery3.jpg",
   },
-  {
-    title: "Dyeing Chamber A",
-    description: "Precision color processing",
-    image: "/images/tailorMechine.jpg",
-  },
-  {
-    title: "Dyeing Chamber B",
-    description: "Precision color processing",
-    image: "/images/tailoringMechine1.jpg",
-  },
+  // {
+  //   title:
+  //     " JUKI's button machines, buttonhole machines, stitching machines, and lock machines",
+  //   description:
+  //     "We use JUKI's button machines, buttonhole machines, stitching machines, and lock machines for precise and efficient garment manufacturing. These machines ensure secure button attachment, clean buttonholes, smooth stitching, and strong seams, enhancing productivity and quality in mass production.",
+  //   image: "/images/tailoringMechine1.jpg",
+  // },
 ];
 
 export default function MachinerySection() {
